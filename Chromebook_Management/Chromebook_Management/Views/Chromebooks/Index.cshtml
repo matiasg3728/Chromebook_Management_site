@@ -1,0 +1,65 @@
+﻿@model IEnumerable<Chromebook_Management.Models.Chromebook>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CommunityId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OrderID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Refurbished)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ChromebookType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EnrollmentDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CommunityId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Refurbished)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ChromebookType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EnrollmentDate)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ChromebookId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ChromebookId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ChromebookId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
