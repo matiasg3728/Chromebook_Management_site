@@ -18,16 +18,9 @@ namespace Chromebook_Management.Models
         public int OrderID { get; set; }
 
 
-        /*
-         * The idea for the status code is it will represent if the CB is refurbished or not, the type of Chromebook, and where the chromebook
-         * is. EX: R-101p-IH
-         * 
-         * (Refurbished or New)-(Chromebook Type)-(In house, Broken, On-site)
-         * 
-         * Im not sure if this is a good way to do it or if I should just have a bunch of collumns. I will try this then speak with Hozi for some
-         * insight into what he thinks when I have a good working example
-        */
-        public string StatusCode { get; set; }
+        public bool Refurbished { get; set; } 
+        public string ChromebookType { get; set; }
+        public string Status { get; set; } // In house, Broken, On site
         public DateTime EnrollmentDate { get; set; }
 
        
